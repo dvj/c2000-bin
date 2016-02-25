@@ -54,6 +54,7 @@ struct ECAN_REGS ECanaShadow;
 
     ECanaShadow.CANMC.all = ECanaRegs.CANMC.all;
     ECanaShadow.CANMC.bit.SCB = 1;
+    ECanaShadow.CANMC.bit.ABO = 1;
     ECanaRegs.CANMC.all = ECanaShadow.CANMC.all;
 
 /* Initialize all bits of 'Message Control Register' to zero */
