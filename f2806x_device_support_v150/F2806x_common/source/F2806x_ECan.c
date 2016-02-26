@@ -55,6 +55,7 @@ struct ECAN_REGS ECanaShadow;
     ECanaShadow.CANMC.all = ECanaRegs.CANMC.all;
     ECanaShadow.CANMC.bit.SCB = 1;
     ECanaShadow.CANMC.bit.ABO = 1;
+    ECanaShadow.CANMC.bit.WUBA = 1;
     ECanaRegs.CANMC.all = ECanaShadow.CANMC.all;
 
 /* Initialize all bits of 'Message Control Register' to zero */
@@ -121,7 +122,7 @@ struct ECAN_REGS ECanaShadow;
        See Note at end of file. */
 
     ECanaShadow.CANBTC.bit.BRPREG = 1;
-    ECanaShadow.CANBTC.bit.TSEG2REG = 5;
+    ECanaShadow.CANBTC.bit.TSEG2REG = 6;
     ECanaShadow.CANBTC.bit.TSEG1REG = 14;
 
     ECanaShadow.CANBTC.bit.SAM = 1;
