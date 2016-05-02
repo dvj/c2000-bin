@@ -121,9 +121,10 @@ struct ECAN_REGS ECanaShadow;
     /* The following block is for 80 MHz SYSCLKOUT. (40 MHz CAN module clock Bit rate = 1 Mbps
        See Note at end of file. */
 
-    ECanaShadow.CANBTC.bit.BRPREG = 1;
-    ECanaShadow.CANBTC.bit.TSEG2REG = 7;
-    ECanaShadow.CANBTC.bit.TSEG1REG = 13;
+    // 90 MHz clock, divide by 2 then 3 for 15 Mz, tseg 1 and 2 add up to 12
+    ECanaShadow.CANBTC.bit.BRPREG = 2;
+    ECanaShadow.CANBTC.bit.TSEG2REG = 3;
+    ECanaShadow.CANBTC.bit.TSEG1REG = 9;
 
     ECanaShadow.CANBTC.bit.SAM = 1;
     ECanaRegs.CANBTC.all = ECanaShadow.CANBTC.all;
